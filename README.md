@@ -10,5 +10,7 @@ Precompiled binaries for Windows, Linux, Raspberry Pi, macOS, OpenWrt, precompil
 
 On all systems except Windows the server needs to be invoked with `sudo` since it uses port 80.
 
+```
 chmod +x ./server-*
 sudo ./server
+```
