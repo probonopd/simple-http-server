@@ -10,6 +10,8 @@ git:
 script:
   - sudo apt-get -y install upx
   - go get
+  # The valid combinations of $GOOS and $GOARCH are documented at
+  # https://golang.org/doc/install/source
   - env GOOS=linux GOARCH=386 go build -trimpath -ldflags="-s -w" server.go
   - upx -9 server
   - mv server server-linux_386
