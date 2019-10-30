@@ -1,0 +1,28 @@
+dist: xenial
+language: go
+  
+go:
+- "1.13"
+
+git:
+  depth: 1
+
+script:
+  - sudo apt-get -y install upx
+  - go get
+  - env GOOS=linux GOARCH=386 go build -trimpath -ldflags="-s -w" server.go
+  - upx -9 server
+  - mv server server-linux_386
+
+after_success:
+  - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
+  - bash upload.sh server-*
+  
+branches:
+  except:
+    - # Do not build tags that we create when we upload to GitHub Releases
+    - /^(?i:continuous)/
+
+cache:
+  directories:
+    - $HOME/gopath/src
