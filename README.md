@@ -12,5 +12,5 @@ On all systems except Windows the server needs to be invoked with `sudo` since i
 
 ```
 chmod +x ./server-*
-sudo ./server
+sudo ./server-*
 ```
