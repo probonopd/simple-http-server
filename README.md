@@ -14,3 +14,7 @@ On all systems except Windows the server needs to be invoked with `sudo` since i
 chmod +x ./server-*
 sudo ./server-*
 ```
+
+Browsers like Safari on the Mac can show it like this:
+
+![](https://user-images.githubusercontent.com/2480569/67892246-395d1a80-fb4c-11e9-9aea-aca5a196495f.png)
