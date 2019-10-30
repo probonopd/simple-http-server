@@ -13,7 +13,22 @@ script:
   - env GOOS=linux GOARCH=386 go build -trimpath -ldflags="-s -w" server.go
   - upx -9 server
   - mv server server-linux_386
-
+  - env GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" server.go
+  - upx -9 server
+  - mv server server-linux_amd64
+  - env GOOS=darwin GOARCH=amd64 go build -trimpath -ldflags="-s -w" server.go
+  - upx -9 server
+  - mv server server-darwin_amd64
+  - env GOOS=windows GOARCH=386 go build -trimpath -ldflags="-s -w" server.go
+  - upx -9 server.exe
+  - mv server.exe server-windows_386.exe
+  - env GOOS=windows GOARCH=amd64 go build -trimpath -ldflags="-s -w" server.go
+  - upx -9 server.exe
+  - mv server.exe server-windows_amd64.exe
+  - env GOOS=linux GOARCH=mips GOMIPS=softfloat go build -trimpath -ldflags="-s -w" server.go # Runs on OpenWrt ar71xx
+  - upx -9 server
+  - mv server server-mips
+ 
 after_success:
   - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
   - bash upload.sh server-*
@@ -25,4 +40,4 @@ branches:
 
 cache:
   directories:
-    - $HOME/gopath/src
+    - $HOME/gopath
