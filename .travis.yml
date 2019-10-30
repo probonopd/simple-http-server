@@ -8,7 +8,9 @@ git:
   depth: 1
 
 script:
-  - sudo apt-get -y install upx
+  - wget -c -q https://github.com/upx/upx/releases/download/v3.95/upx-3.95-amd64_linux.tar.xz # Needed for arm64
+  - tar xf upx-*_linux.tar.xz
+  - export PATH=$(readlink -f upx-*_linux/):$PATH
   - go get
   # The valid combinations of $GOOS and $GOARCH are documented at
   # https://golang.org/doc/install/source
