@@ -1,4 +1,4 @@
-# simple-http-server
+# simple-http-server [![Build Status](https://travis-ci.com/probonopd/simple-http-server.svg?branch=master)](https://travis-ci.com/probonopd/simple-http-server)
 
 A simple HTTP server that advertises itself to the network with [DNS Service Discovery (DNS-SD)](http://www.dns-sd.org/), also known as Zeroconf (Bonjour, previously Rendezvous). It serves the root directory (`/`) to the network without any security protections. Do not use it if this is not what you want. Since the server is written in Go, it can easily be adjusted to your own needs by editing the source code.
 
