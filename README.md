@@ -1,14 +1,10 @@
 # simple-http-server
 
-A simple HTTP server that advertises itself to the network with Zeroconf (Bonjour).
-
-It serves the root directory (`/`) to the network without any security protections. Do not use it if this is not what you want.
+A simple HTTP server that advertises itself to the network with Zeroconf (Bonjour). It serves the root directory (`/`) to the network without any security protections. Do not use it if this is not what you want. Since the server is written in Go, it can easily be adjusted to your own needs by editing the source code.
 
 ## Download
 
-For Windows, Linux, macOS, OpenWrt, precompiled versions are available from
-
-https://github.com/probonopd/simple-http-server/releases/tag/continuous
+Precompiled binaries for Windows, Linux, Raspberry Pi, macOS, OpenWrt, precompiled versions are available from https://github.com/probonopd/simple-http-server/releases/tag/continuous
 
 ## Usage
 
